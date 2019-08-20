@@ -34,6 +34,9 @@ jobs:
         file:
           - "applications/${APPLICATION}-server/build/libs/${APPLICATION}-server.jar"
         skip_cleanup: true
+      on:
+        tags: true
+        all_branches: true
 
     - stage: build and publish
       language: java
@@ -53,6 +56,9 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
+      on:
+        tags: true
+        all_branches: true
 
     - stage: build and publish
       language: java
@@ -72,6 +78,9 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
+      on:
+        tags: true
+        all_branches: true
 
     - stage: build and publish
       language: java
@@ -91,6 +100,9 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
+      on:
+        tags: true
+        all_branches: true
 
     - stage: deploy
       language: bash
