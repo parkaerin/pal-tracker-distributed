@@ -23,7 +23,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=allocations
-        - ./gradlew clean :applications:${APPLICATION}-server:assemble
+        - ./gradlew clean :applications:${APPLICATION}-server:build -x test
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -46,7 +46,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=backlog
-        - ./gradlew clean :applications:${APPLICATION}-server:assemble
+        - ./gradlew clean :applications:${APPLICATION}-server:build -x test
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -65,7 +65,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=registration
-        - ./gradlew clean :applications:${APPLICATION}-server:assemble
+        - ./gradlew clean :applications:${APPLICATION}-server:build -x test
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -84,7 +84,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=timesheets
-        - ./gradlew clean :applications:${APPLICATION}-server:assemble
+        - ./gradlew clean :applications:${APPLICATION}-server:build -x test
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
